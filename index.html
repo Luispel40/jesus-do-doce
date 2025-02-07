@@ -8,38 +8,75 @@
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <title>jesus do doce</title>
 </head>
 
 <body>
   <div class="section" id="header">
     <div class="container">
-      <div class="content">
-        <img src="img/lohoBranca.png" alt="logo" class="logo"
-          style="position: relative; top: -200px; align-self: flex-start" />
-        <h1>Descubra como transformar doces em renda.</h1>
-        <p>
-          Não fique esperando um milagre para começar a ganhar dinheiro
-          fazendo doces caseiros.
-        </p>
-        <span class="gradient">
-          <button class="btn-action" variant="primary">
+      <center>
+        <div class="content">
+
+          <h1>Descubra como faço <span class="destaque">mais de 10.000,00 todos os meses</span> vendendo doces</h1>
+          <p>
+            Se essa era a resposta que você estava esperando, o seu milagre está aqui:
+          </p>
+
+
+          <div class="ytb-video">
+
+            <section class="sec-vsl-1">
+              <!-- Container principal -->
+              <div class="container">
+                <!-- Wrapper branco -->
+                <!-- Primeira linha vazia -->
+              </div>
+              <!-- Segunda linha com conteúdo -->
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- Conteúdo de vídeo -->
+                  <div class="video-con">
+                    <!-- Vídeo responsivo -->
+                    <div class="responsive-video">
+                      <!-- Elemento de loading de vídeo -->
+                      <div id="loadingVideo" style="display:none;"></div>
+                      <!-- Elemento com imagem de fundo -->
+                      <div id="cfs" style="display:block;"></div>
+                      <!-- Elemento com fundo escuro -->
+                      <div class="cov"></div>
+                      <!-- Elemento com fundo escuro total -->
+                      <div class="covall"></div>
+                      <!-- Elemento de reprodução de vídeo -->
+                      <div id="player"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+
+          </div>
+
+
+        </div>
+        <div class="container container-column">
+          <button class="btn-action" variant="primary"
+          style="width: 90% !important; margin: 40px auto !important;">
             <a href="https://www.instagram.com/jesusdosdocesbc/" target="_blank">
               QUERO SABER MAIS!
             </a>
           </button>
-        </span>
-      </div>
-      <div class="content">
-        <img class="doces" src="/img/doces-frente capa.png" alt="" style="
-              position: absolute;
-              animation: flutuate 3s ease-in-out infinite alternate;
-              z-index: 9;
-            " />
-        <img class="capa-img" src="img/jesus-capa.png" alt="" />
-      </div>
+          <img src="/img/bandeiras.png" alt=""
+          style="margin: -50px auto 20px auto !important;"> 
+        </div>
     </div>
+    </center>
+
+  </div>
   </div>
 
   <div class="section" id="s2">
@@ -178,7 +215,7 @@
           </p>
         </center>
 
-        <div class="btn-action" variant="secondary">
+        <div class="btn-action" variant="primary">
           <a href="https://instagram.com/jesusdosdocesbc" target="_blank">
             quero saber mais
           </a>
@@ -256,6 +293,224 @@
       },
       nameAttr: "data-lucide", // attribute for the icon name.
     });
+  </script>
+
+  <script>
+    var x = window.matchMedia("(max-width: auto)");
+    if (x.matches) {
+      $("#cfs").addClass("cfsm");
+    }
+    else {
+      // Variável que armazena o ID do vídeo do YouTube
+      var youtubeId = "MJSOfs0xML0";
+      var vplay = 1;
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script>
+    // Variável para armazenar o status do mute (1 significa que o vídeo está mudo)
+    var muteStatus = 1;
+
+    // Cria um elemento 'script'
+    var tag = document.createElement('script');
+
+    // Atribui a URL da API do YouTube ao atributo 'src' do elemento 'script'
+    tag.src = "//www.youtube.com/iframe_api";
+
+    // Seleciona o primeiro elemento 'script' da página
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+
+    // Insere o elemento 'script' antes do primeiro elemento 'script' da página
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // Variável para armazenar o player do YouTube
+    var player;
+
+    // Função chamada quando a API do YouTube estiver pronta
+    function onYouTubeIframeAPIReady() {
+      // Cria um novo objeto 'player' usando a API do YouTube
+      player = new YT.Player('player', {
+        // ID do vídeo a ser reproduzido
+        videoId: youtubeId,
+
+        // Opções de configuração para o player
+        playerVars: {
+          autoplay: vplay, // reprodução automática
+          cc_load_policy: 0, // não carrega legendas
+          controls: 0, // sem controles
+          disablekb: 1, // desabilita teclado
+          fs: 0, // sem tela cheia
+          playsinline: 1, // reprodução inline
+          modestbranding: 1, // branding modesto
+          iv_load_policy: 3, // não carrega anúncios
+          rel: 0, // sem vídeos relacionados
+          showinfo: 0, // sem informações do vídeo
+          host: 'https://www.youtube.com' // host
+        },
+
+        // Eventos para o player
+        events: {
+          // Chamado quando o player estiver pronto
+          onReady: onPlayerReady,
+          // Chamado quando o estado do player mudar
+          onStateChange: onPlayerStateChange,
+          // Chamado quando houver um erro no player
+          onError: onPlayerError
+        }
+      });
+    }
+
+    function mutevid() {
+      player.mute();
+      player.setVolume(0);
+      muteStatus = 1;
+    }
+
+
+
+    function unmutevid() {
+      player.unMute();
+      player.setVolume(100);
+      muteStatus = 0;
+    }
+
+    function resetvid() {
+      $("#loadingVideo").hide();
+      $(".cov").show();
+      player.pauseVideo();
+      unmutevid();
+      player.seekTo(0);
+    }
+
+    function onPlayerReady() {
+      mutevid();
+      if (nw) {
+        player.seekTo(0);
+        nw = false;
+      }
+
+      player.playVideo();
+      if (na == 1) {
+        resetvid();
+      }
+
+      if (sc == 1) {
+        updateTimerDisplay();
+        updateProgressBar();
+        time_update_interval = setInterval(function () {
+          updateTimerDisplay();
+          updateProgressBar();
+        }, 1000);
+
+      }
+      CONSOLE.LOG('READY');
+    }
+
+    function onPlayerError(e) {
+      player.stopVideo();
+      $(".cov").css("background-image", "url('/img/embed.png')");
+      $(".cov").show();
+      $("#loadingVideo").hide();
+      $("#cfs").hide();
+    }
+
+    function onPlayerStateChange(e) {
+      console.log('State Change');
+      console.log(e);
+      if (e.data === -1) {
+        c++;
+        if (c > 1) {
+          setTimeout(function () {
+            if (player.getPlayerState() === -1) {
+              resetvid();
+            }
+          }, 3500);
+        }
+      }
+      if (e.data === 1) {
+        $("#loadingVideo").hide();
+        $(".cov").hide();
+        $(".cov").css("background-image", "url('/img/embed.png')");
+        if (muteStatus == 1) {
+          $(".unmute").show();
+        } else {
+          $(".unmute").hide();
+          unmutevid();
+        }
+
+      }
+      if (e.data === 2) {
+        $("#loadingVideo").hide();
+        $("#cfs").hide();
+        $(".cov").show();
+        if (muteStatus == 1) {
+          $(".unmute").show();
+        } else {
+          $(".unmute").hide();
+          unmutevid();
+        }
+      }
+
+      if (e.data === 3) { }
+      if (e.data === 0 || e.data === 5) {
+        $("#loadingVideo").hide();
+        $("#cfs").hide();
+        $(".cov").css("background-image", "url('/img/embed.png')");
+        $(".cov").show();
+      }
+
+    }
+    $(".cov").click(function () {
+      player.playVideo();
+      $(".cov").hide();
+    });
+
+    $(".covall").click(function () {
+      player.pauseVideo();
+      $("#cfs").hide();
+      $(".cov").show();
+
+    });
+    $("#cfs").click(function () {
+      unmutevid();
+      $("#cfs").hide();
+      player.seekTo(0);
+    });
+
+
+    $("cfsm").click(function () {
+      player.playVideo();
+      $("#cfs").hide();
+      player.seekTo(0);
+    });
+
+    function updateTimerDisplay() {
+      $('#current-time').text(formatTime(player.getCurrentTime()));
+      $('#duration').text(formatTime(player.getDuration()));
+    }
+
+    function formatTime(time) {
+      time = Math.round(time);
+      var minutes = Math.floor(time / 60),
+        seconds = time - minutes * 60;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      return minutes + ":" + seconds;
+    }
+
+    $('#progress-bar').on('mouseup touchend', function (e) {
+      var newTime = player.getDuration() * (e.target.value / 100);
+      player.seekTo(newTime);
+    });
+
+    function updateProgressBar() {
+      $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
+    }
+
+    function preload(arrayOfImages) {
+      $(arrayOfImages).each(function () {
+        $('<img />').attr('src', this).appendTo('body').css('display', 'none');
+      });
+    }
   </script>
   <script src="script.js"></script>
 </body>

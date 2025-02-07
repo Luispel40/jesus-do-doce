@@ -14,3 +14,4 @@ const openThis = ({ target }) => {
 accordionTitles.forEach((title) => {
   title.addEventListener("click", openThis);
 });
+
