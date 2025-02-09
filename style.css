@@ -130,16 +130,11 @@ h6 {
 #s2 {
     & .container-info {
         flex-direction: row;
-        background-color: var(--primary);
         padding: 20px 0;
-        color: #fff !important;
         border-radius: 10px;
-        box-shadow: 3px 3px 5px #00000080;
         margin: 40px 0;
 
-        & .content:first-child {
-            border-right: 1px solid #fff;
-        }
+       
 
         & .content {
             display: flex;
@@ -150,12 +145,7 @@ h6 {
 
             & img {
                 width: 100%;
-                scale: 1.2;
                 position: relative;
-                left: -90px;
-                mask-image: linear-gradient(to bottom,
-                        #000 95%,
-                        transparent 90%);
             }
         }
     }
