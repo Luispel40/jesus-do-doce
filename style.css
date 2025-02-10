@@ -185,6 +185,12 @@ h6 {
     border: 1px solid red !important;
 }
 
+.logo {
+    width: 150px;
+    filter: invert(1);
+    z-index: 9999;
+}
+
 #header {
     /* background: radial-gradient(circle at center,
             #171717,
