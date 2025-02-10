@@ -163,7 +163,7 @@ h6 {
         & li {
             position: relative;
             padding-left: 20px;
-            
+
             gap: 10px;
             padding: 10px 0;
 
@@ -174,30 +174,7 @@ h6 {
         }
     }
 
-    .scrollable {
-        overflow-y: hidden;
-        max-height: 400px;
-        width: 100%;
-        border: 5px solid #086683;
-        border-radius: 10px;
-        box-shadow: 3px 3px 5px #00000080;
 
-        & img {
-            width: 100%;
-            object-fit: cover;
-            position: relative;
-            top: 0;
-            transition: 2s ease-in-out;
-        }
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-
-    .scrollable:hover img {
-        top: -100px;
-    }
 }
 
 [borders] {
@@ -272,9 +249,7 @@ h6 {
 }
 
 #s3 {
-    background: linear-gradient(120deg,
-            var(--blue),
-            var(--red));
+    background: var(--blue);
     color: #fff;
     padding-top: 100px;
 
@@ -316,8 +291,25 @@ h6 {
     }
 }
 
-#s5 {
+#s4 {
+    background: url(/img/section\ bonus.jpg);
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    min-height: 700px;
+
+    & .content:first-child {
+        width: 400px;
+    }
+}
+
+#s42 {
     background: var(--primary);
+    color: #fff;
+}
+
+#s5 {
+    background: var(--secondary);
 
     & .container-info {
         gap: 40px;
