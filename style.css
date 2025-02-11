@@ -467,6 +467,31 @@ img {
     }
 }
 
+.timeline {
+    content: '';
+    display: block;
+    padding-bottom: 2%;
+    background-color: brown;
+    border-radius: 0 20px 20px 20px;
+    width: 0;
+    z-index: 9999 !important;
+    position: absolute;
+    bottom: 2px;
+    animation: timeline 42s linear;
+    animation-play-state: paused;
+
+}
+
+@keyframes timeline {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 101%;
+    }
+}
+
 .destaque {
     color: var(--red);
     text-transform: uppercase;

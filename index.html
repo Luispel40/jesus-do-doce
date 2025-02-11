@@ -58,6 +58,8 @@
                       <div class="covall"></div>
                       <!-- Elemento de reprodução de vídeo -->
                       <div id="player"></div>
+                      <!-- Elemento de barra de progresso -->
+                      <div class="timeline"></div>
                     </div>
                   </div>
                 </div>
@@ -344,6 +346,9 @@
     // Variável para armazenar o player do YouTube
     var player;
 
+    // Variável para armazenar o tempo de atualização da barra de progresso
+    const timeline = document.querySelector('.timeline');
+
     // Função chamada quando a API do YouTube estiver pronta
     function onYouTubeIframeAPIReady() {
       // Cria um novo objeto 'player' usando a API do YouTube
@@ -378,6 +383,17 @@
       });
     }
 
+    //PAUSE/PLAY ANIMATION TIMELINE
+    function playTimeline() {
+      timeline.style.animationPlayState = "running";
+
+    }
+
+
+    function pauseTimeline() {
+      timeline.style.animationPlayState = "paused";
+    }
+
     function mutevid() {
       player.mute();
       player.setVolume(0);
@@ -398,10 +414,12 @@
       player.pauseVideo();
       unmutevid();
       player.seekTo(0);
+      pauseTimeline();
     }
 
     function onPlayerReady() {
       mutevid();
+      pauseTimeline();
       if (nw) {
         player.seekTo(0);
         nw = false;
@@ -421,7 +439,6 @@
         }, 1000);
 
       }
-      CONSOLE.LOG('READY');
     }
 
     function onPlayerError(e) {
@@ -430,11 +447,10 @@
       $(".cov").show();
       $("#loadingVideo").hide();
       $("#cfs").hide();
+      pauseTimeline()
     }
 
     function onPlayerStateChange(e) {
-      console.log('State Change');
-      console.log(e);
       if (e.data === -1) {
         c++;
         if (c > 1) {
@@ -478,25 +494,29 @@
       }
 
     }
+
     $(".cov").click(function () {
       player.playVideo();
       $(".cov").hide();
+      playTimeline();
     });
 
     $(".covall").click(function () {
       player.pauseVideo();
       $("#cfs").hide();
       $(".cov").show();
-
+      pauseTimeline();
     });
+
     $("#cfs").click(function () {
       unmutevid();
       $("#cfs").hide();
       player.seekTo(0);
+      playTimeline();
     });
 
-
     $("cfsm").click(function () {
+      playTimeline();
       player.playVideo();
       $("#cfs").hide();
       player.seekTo(0);
@@ -522,6 +542,7 @@
 
     function updateProgressBar() {
       $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
+      
     }
 
     function preload(arrayOfImages) {
