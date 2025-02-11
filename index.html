@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="toast.css">
   <title>jesus do doce</title>
 </head>
 
@@ -106,7 +107,7 @@
           brigadeiros, que encontrei o caminho para a
           <b>liberdade financeira e de tempo</b> que sempre sonhei.
           <br /><br />
-          <i>"Hoje, sou prova viva de que um doce pode mudar vidas."</i>
+          <i>"Hoje sou prova viva de quem um <span class="destaque">MÉTODO , e disciplina mudam vidas</span>"</i>
         </p>
       </div>
     </div>
@@ -116,16 +117,17 @@
         <br />
         <li>
           como ganhar <span class="destaque">mais de R$ 2.000 em um único dia</span>, levar minha família
-          para lugares incríveis e <span class="destaque">até ser reconhecido na TV </span><br />
+          para lugares incríveis e <span class="destaque">E até ser reconhecido por famosos </span>que antes eu só via
+          na tela do celular, <span class="destaque">e hoje chamo de amigo</span> <br />
         </li>
-        <li>percebi que precisava dividir esse segredo com o mundo.</li>
+        <li>Percebi que precisava dividir esse método com meus seguidores.</li>
       </ul>
 
     </div>
   </div>
 
   <div class="divider-cake">
-    <i data-lucide="cake-slice"></i>
+    <i data-lucide="dessert"></i>
   </div>
 
   <div class="section container-info" id="s3">
@@ -133,7 +135,7 @@
       <h3>O que você vai aprender?</h3>
       <p>
         Vou te ensinar o passo a passo para vender doces gourmet de alto
-        valor, como brigadeiros diferenciados e cupcakes que encantam qualquer
+        valor, como brigadeiros diferenciados que encantam qualquer
         cliente. Não importa se você nunca vendeu nada antes, você terá um
         plano simples e prático para começar.
       </p>
@@ -167,7 +169,7 @@
         <h3>Bônus exclusivo!</h3>
         <br />
         <p>
-          Além do método "doce negócio lucrativo", você terá acesso a um grupo
+          Além do método "doce divino", você terá acesso a um grupo
           exclusivo para alavancar suas vendas. São dicas práticas e
           estratégias que vão te ajudar a vender mais e conquistar seus
           objetivos.
@@ -189,7 +191,7 @@
         <p>
           Não basta vender doces, você precisa se destacar, e é exatamente
           isso que vou te ensinar. Imagine seus clientes fazendo fila para
-          comprar seus brigadeiros e cupcakes gourmet, enquanto você
+          comprar seus doces gourmet, enquanto você
           transforma cada venda em um passo para seus sonhos.
         </p>
       </center>
@@ -199,7 +201,7 @@
       <p>
         Se você quer dar o primeiro passo para construir um negócio que te dá
         orgulho, liberdade e reconhecimento, <b class="destaque">essa é a sua chance</b>. O
-        método "doce negócio lucrativo" é o mapa que você precisa para sair do zero e
+        método "doce divino" é o mapa que você precisa para sair do zero e
         alcançar o topo.
       </p>
       <p><i>"Se eu consegui, você também pode!"</i></p>
@@ -248,11 +250,11 @@
       <div class="accordion">
         <div class="accordion-row">
           <button class="accordion-title">
-            o que é o doce negócio lucrativo?
+            o que é o doce divino?
             <i class="fa-solid fa-plus"></i>
           </button>
           <p>
-            O doce negócio lucrativo é o método que vai te ensinar o passo a passo de
+            O doce divino é o método que vai te ensinar o passo a passo de
             como fazer e vender doces caseiros na rua.
           </p>
         </div>
@@ -298,6 +300,14 @@
       <p>Jesus dos Doces 2025 - Todos os direitos reservados</p>
     </center>
   </footer>
+
+  <div class="notifications"></div>
+    <div class="buttons">
+        <button toast id="success">Success</button>
+        <button toast id="error">Error</button>
+        <button toast id="warning">Warning</button>
+        <button toast id="info">Info</button>
+    </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -394,6 +404,12 @@
       timeline.style.animationPlayState = "paused";
     }
 
+    function resetTimeline() {
+      timeline.style.animation = "none";
+      timeline.offsetHeight;
+      timeline.style.animation = "timeline 42s linear";
+    }
+
     function mutevid() {
       player.mute();
       player.setVolume(0);
@@ -432,7 +448,7 @@
 
       if (sc == 1) {
         updateTimerDisplay();
-        updateProgressBar();
+        resetTimeline();
         time_update_interval = setInterval(function () {
           updateTimerDisplay();
           updateProgressBar();
@@ -499,19 +515,21 @@
       player.playVideo();
       $(".cov").hide();
       playTimeline();
+      $(".cov").style.pointerEvents = "none";
     });
 
     $(".covall").click(function () {
-      player.pauseVideo();
-      $("#cfs").hide();
-      $(".cov").show();
-      pauseTimeline();
+      // player.pauseVideo();
+      // $("#cfs").hide();
+      // $(".cov").show();
+      // pauseTimeline();
     });
 
     $("#cfs").click(function () {
       unmutevid();
       $("#cfs").hide();
       player.seekTo(0);
+      resetTimeline();
       playTimeline();
     });
 
@@ -542,7 +560,7 @@
 
     function updateProgressBar() {
       $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
-      
+
     }
 
     function preload(arrayOfImages) {
@@ -551,7 +569,9 @@
       });
     }
   </script>
+  
   <script src="script.js"></script>
+  
 </body>
 
 </html>
