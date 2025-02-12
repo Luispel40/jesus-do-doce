@@ -255,9 +255,10 @@ img {
     align-items: center;
     justify-content: center;
 
-    & svg {
+    & img {
         position: relative;
         top: 10px;
+        width: 40px;
     }
 
     &::after {
@@ -380,11 +381,12 @@ img {
     & h4 {
         text-transform: uppercase;
         font-weight: 500;
-        font-size: 13px;
-        color: #fff2;
+        font-size: 10px !important;
+        color: #fff;
+        background: #fff2;
         padding: 10px 20px;
         border-radius: 20px;
-        border: #fff2 2px solid;
+        border: #fff 1px solid;
         margin-bottom: -25px;
     }
 }
@@ -632,7 +634,6 @@ img {
         & .container {
             flex-direction: column !important;
             overflow-x: hidden !important;
-            padding: 0 !important;
         }
 
         & .logo {
@@ -649,14 +650,19 @@ img {
             top: -25px;
         }
 
+        & .badges {
+            gap: 19px;
+            margin: 8px;
+            scale: .9;
+        }
+
         & h1 {
-            font-size: 2rem !important;
-            margin: 6%;
+            font-size: 1.2rem !important;
+            margin: 2%;
         }
 
         & p {
-            font-size: 1.2rem !important;
-            margin: 6%;
+            font-size: 1rem !important;
         }
     }
 
@@ -688,6 +694,18 @@ img {
 
     #s4 {
         background: none !important;
+
+    }
+
+    #s42 {
+        & .container {
+
+            & h2 {
+                font-size: 1.2rem !important;
+                text-wrap: balance !important;
+            }
+
+        }
     }
 
     #s5 {
@@ -701,7 +719,8 @@ img {
 
                 & h3,
                 p {
-                    text-align: justify !important;
+                    text-align: center !important;
+                    gap: 20px !important;
                     width: 80% !important;
                 }
 
@@ -714,6 +733,7 @@ img {
     .doces {
         left: -150px !important;
     }
+
 
     body {
         position: relative;
