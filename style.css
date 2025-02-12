@@ -41,8 +41,31 @@ body {
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 img {
     pointer-events: none;
+}
+
+a:not(p>a) {
+    all: unset;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: x-large;
+
+    &:after {
+        content: "Vagas limitadas";
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        font-size: 10px;
+        color: #fff5;
+        margin-top: 12px;
+        font-size: xx-small;
+        font-weight: 100;
+    }
 }
 
 h1,
@@ -53,7 +76,8 @@ h5,
 h6 {
     font-weight: 700;
     text-wrap: balance;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Abril Fatface", serif;
+    letter-spacing: .2rem;
     text-transform: uppercase;
 }
 
@@ -75,9 +99,6 @@ h6 {
     z-index: 9999 !important;
     box-shadow: var(--shadow);
 
-    & a {
-        all: unset;
-    }
 
     &[variant="primary"] {
         background: var(--gradient-red);
@@ -307,7 +328,7 @@ img {
 #s4 {
     background: url(/img/section\ bonus.jpg);
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;
     background-repeat: no-repeat;
     min-height: 700px;
 
@@ -511,7 +532,7 @@ img {
     }
 
     100% {
-        transform: translateY(-100px); 
+        transform: translateY(-100px);
     }
 }
 
@@ -618,7 +639,7 @@ img {
             width: 100px !important;
             top: 0px !important;
             margin: 20px auto;
-            
+
         }
 
         & .capa-img {
@@ -666,7 +687,7 @@ img {
     }
 
     #s4 {
-       background: none !important;
+        background: none !important;
     }
 
     #s5 {
