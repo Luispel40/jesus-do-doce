@@ -391,11 +391,6 @@
       timeline.style.animationPlayState = "paused";
     }
 
-    function resetTimeline() {
-      timeline.style.animation = "none";
-      timeline.offsetHeight;
-      timeline.style.animation = "timeline 42s linear";
-    }
 
     function mutevid() {
       player.mute();
@@ -435,7 +430,6 @@
 
       if (sc == 1) {
         updateTimerDisplay();
-        resetTimeline();
         time_update_interval = setInterval(function () {
           updateTimerDisplay();
           updateProgressBar();
@@ -516,7 +510,6 @@
       unmutevid();
       $("#cfs").hide();
       player.seekTo(0);
-      resetTimeline();
       playTimeline();
     });
 

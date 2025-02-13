@@ -676,15 +676,7 @@ img {
         }
     }
 
-    .doces-s2 {
-        width: 200px !important;
-        mask-image: linear-gradient(to bottom,
-                #000 90%,
-                transparent 100%) !important;
-        left: 50% !important;
-        top: -20px !important;
-        transform: translateX(-57%) !important;
-    }
+    
 
     #s3 {
         & .container-info {
