@@ -364,7 +364,7 @@ img {
             text-align: center;
 
             & img {
-                margin-bottom: 60px !important;
+                margin-bottom: 20px !important;
             }
         }
     }
