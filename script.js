@@ -51,14 +51,7 @@ window.onload = function () {
     let title = 'Aviso importante!';
     let text = 'Mais pessoas estão visualizando essa página!';
     createToast(type, icon, title, text);
-  }, 20000)
+  }, 30000)
 }
 
-warning.onclick = function () {
-  let type = 'warning';
-  let icon = 'fa-solid fa-triangle-exclamation';
-  let title = 'Aviso importante!';
-  let text = 'Restam poucas vagas!';
-  createToast(type, icon, title, text);
-}
 
