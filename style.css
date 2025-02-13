@@ -699,6 +699,7 @@ img {
 
     #s42 {
         & .container {
+            padding: 40px 10px !important;
 
             & h2 {
                 font-size: 1.2rem !important;
@@ -715,7 +716,7 @@ img {
 
 
             & .container-column {
-                width: 90% !important;
+                margin-top: 100px;
 
                 & h3,
                 p {
