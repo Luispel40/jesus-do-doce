@@ -2,7 +2,7 @@
     --primary: #171717;
     --secondary: #fff;
 
-    --blue: #086683;
+    --blue: #b5d1ef;
     --red: #b83434;
 
     --shadow:
@@ -17,9 +17,9 @@
             #b83434 55%);
 
     --gradient-blue: linear-gradient(120deg,
-            #086683 45%,
-            #5ea3b8 50%,
-            #086683 55%);
+            #3d8cc4 45%,
+            #b5d1ef 50%,
+            #3d8cc4 55%);
 }
 
 * {
@@ -352,7 +352,7 @@ img {
 
 #s3 {
     background: var(--blue);
-    color: #fff;
+    color: var(--primary);
     padding-top: 100px;
     min-height: auto !important;
 
