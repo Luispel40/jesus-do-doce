@@ -785,6 +785,13 @@ img {
                     width: 80% !important;
                 }
 
+                & h1 {
+                    text-align: center !important;
+                    font-size: 1.5rem !important;
+                    margin: 20px auto !important;
+                    max-width: 20% !important;
+                }
+
 
             }
         }
